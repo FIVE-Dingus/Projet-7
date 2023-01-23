@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>Portfolio de GigaChad</title>
+    <title>Projet 7 : GC News</title>
     <meta name="description" content="Ce site est un Portfolio de William Gabali et de Dylan Beney, deux GigaChad">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,13 +23,6 @@
         <div class="nav-wrapper black" >
         <?php
         require_once "cfg/config.php";
-
-        $sql = "SELECT * FROM projets"; //votre requêtes SQL (vous savez faire maintenant héhé !)
-        $pre = $pdo->prepare($sql); //on prévient la base de données qu'on va executer une requête
-        $pre->execute();//on l'execute
-        $project = $pre->fetchAll(PDO::FETCH_ASSOC);// on stocke les données dans une variable (ici $data)
-
-
         if(isset($_SESSION['user'])){
             echo "<a href='action/logout.php'><img src='img/icons8-sortie-50.png' alt='' height=100% ></a>";
         }elseif(isset($_SESSION['error'])){
@@ -69,10 +62,8 @@
                 require_once "cfg/config.php";
                 if(isset($_SESSION['user'])){
                     if($_SESSION['user']['admin']==1){
-                        echo "<li><a href='admin.php' text-decoration:none><img src='img/icons8-parametres-administrateur-homme-50.png'></a></li>";}}
-                foreach($project as $name){ ?>
-                    <li><a href="projets.php?id=<?php echo $name['id']?>"><?php echo $name['titre']?></a></li>
-                <?php }?>
+                        echo "<li><a href='admin.php' text-decoration:none><img src='img/icons8-parametres-administrateur-homme-50.png'></a></li>";}}        
+                ?>
                 
             </ul>
           <ul id="slide-out" class="sidenav">

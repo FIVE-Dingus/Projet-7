@@ -1,1 +1,26 @@
 <?php require_once "composant/menu.php";?>
+<body>
+        <div class="row">
+            <div class="col s6 offset-s1">
+                <h2>Actualités</h2>            
+            </div>
+            <div class="col s12">
+
+                <div class="col s4 offset-s1">
+                    <img src="data:image/jpeg;base64,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">
+                </div>
+                <div class="col s6">
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, nulla voluptatum iste numquam eligendi rem quasi, earum ducimus neque consequuntur voluptatibus fuga provident atque quis architecto quia consequatur voluptatem sit?
+                    </p>
+                </div>
+            </div>
+
+            <div class="col s12">
+                <div class="col s10 offset-s1">
+                    <h2>Dernières actualités</h2>
+                </div>
+                
+            </div> 
+        </div>   
+    <?php require_once "composant/footer.php";?>
