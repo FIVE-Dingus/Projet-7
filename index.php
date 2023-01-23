@@ -1,1 +1,1 @@
-lol
+<?php require_once "composant/menu.php";?>
