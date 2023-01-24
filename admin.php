@@ -28,14 +28,14 @@ foreach($datas as $article);{
     <input type="hidden" value="<?php echo $user['id'] ?>" name="id">
     <input type='submit' value='update' />
 </form>
-<form method='post' action='action/update_article.php'>
+<form method='post' action='action/delete_article.php'>
     <h3><?php echo $article['titre'] ?></h3>
     <input type="hidden" value="<?php echo $article['id'] ?>" name="id">
     <input type='submit' value='suprimer' />
     </form>
-<form method='post' action='action/update_user.php'>
+<form method='post' action='action/update_article.php'>
     <label for="#username">Le pseudo</label>
-    <input id="username" type='text' name='username' value="<?php echo $article['titre'] ?>">
+    <input id="username" type='text' name='titre' value="<?php echo $article['titre'] ?>">
     <input type="hidden" value="<?php echo $article['id'] ?>" name="id">
     <input type='submit' value='update' />
 </form>

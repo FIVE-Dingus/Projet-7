@@ -1,6 +1,6 @@
 <?php require_once "composant/menu.php";?>
 <?php
-$sql = "SELECT * FROM article WHERE id=['id']";
+$sql = "SELECT * FROM article WHERE id=".$_GET['id'];
 $pre = $pdo->prepare($sql);
 $pre->execute();
 $article = $pre->fetchAll(PDO::FETCH_ASSOC);?>

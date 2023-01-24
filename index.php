@@ -12,13 +12,13 @@ $article = $pre->fetchAll(PDO::FETCH_ASSOC);?>
             <div class="col s12">
 
                 <div class="col s12 l4 offset-s1 offset-l1">
-                    <img src="<?php if($article[0]['importance']==3){
+                    <img src="<?php if($article[0]['importance']==4){
                         echo $article[0]['img1'];}
                         ?>">
                 </div>
                 <div class="col s12 l6 offset-l1 ">
                     <p>
-                    <?php if($article[0]['importance']==3){
+                    <?php if($article[0]['importance']==4){
                         echo $article[0]['P1'];}
                         ?>
                     </p>
