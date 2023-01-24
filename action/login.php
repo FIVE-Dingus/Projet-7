@@ -12,11 +12,11 @@ if(empty($_POST['email'])){
 }
 
 if(empty($_POST['password'])){
-     $_SESSION['error']="Password vide! ";
+     $_SESSION['error']="mot de passe vide! ";
      header('location: ../index.php');
      exit();
 }
-$sql = "SELECT * FROM user WHERE email='".$_POST['email']."' AND password='".sha1("hsvbsxhjwbvwdxvwhdxkhkwxbwxhkvkvhwbhvkbwvx".$_POST['password'])."'"; 
+$sql = "SELECT * FROM user WHERE email='".$_POST['email']."' AND password='".sha1(md5(sha1("hsvbsxhjwbvwdxvwhdxkhkwxbwxhkvkvvjgdsvhjdgdqbvivbfhqdsvbuivbudishvudsbuvdshwbhvkbwvx".$_POST['password'])))."'"; 
 $pre = $pdo->prepare($sql); 
 $pre->execute();
 $user = $pre->fetch(PDO::FETCH_ASSOC);

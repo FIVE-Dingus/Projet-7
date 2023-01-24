@@ -1,3 +1,4 @@
+<?php require_once "cfg/config.php"?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -20,7 +21,7 @@
   <body>
     <header>
       <nav>
-        <div class="nav-wrapper black" >
+        <div class="nav-wrapper white black-text" >
         <?php
         require_once "cfg/config.php";
         if(isset($_SESSION['user'])){
@@ -29,7 +30,7 @@
             echo ($_SESSION['error']);
             unset($_SESSION['error']);
         }else{
-          echo "Vous n'êtes pas connecter";
+          echo "Vous n'êtes pas connecté";
         }
         ?>
         <?php if(!isset($_SESSION['user'])){ ?>
@@ -42,6 +43,10 @@
                 <input id="password" type='password' name='password'>
                 <label for="#username">Votre pseudo</label>
                 <input id="username" type='username' name='username'>
+                <label for="#fname">Votre prénom</label>
+                <input id="fname" type='fname' name='fname'>
+                <label for="#name">Votre nom</label>
+                <input id="name" type='name' name='name'>
                 <input type='submit' value='se register' />
             </form>
           </div>
@@ -58,24 +63,24 @@
         <?php } ?>
             <a href="index.php" class="brand-logo">Accueil</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <?php
+            <?php
+                $sql = "SELECT * FROM article";
+                $pre = $pdo->prepare($sql);
+                $pre->execute();
+                $datas = $pre->fetchAll(PDO::FETCH_ASSOC);
+                foreach($datas as $article);
                 require_once "cfg/config.php";
                 if(isset($_SESSION['user'])){
                     if($_SESSION['user']['admin']==1){
-                        echo "<li><a href='admin.php' text-decoration:none><img src='img/icons8-parametres-administrateur-homme-50.png'></a></li>";}}        
-                ?>
+                        echo "<li><a href='admin.php' text-decoration:none><img src='img/icons8-parametres-administrateur-homme-50.png'></a></li>";}}
+                foreach($datas as $article){ ?>
+                    <li><a href="article.php?id=<?php echo $article['id']?>"><?php echo $article['titre']?></a></li>
+                <?php }?>
                 
             </ul>
           <ul id="slide-out" class="sidenav">
             <li><div class="user-view">
-            <div class="background">
-                <img src="img/Kyhudji_background.jpg" alt="Background de la side nav">
-            </div>
-            <a href="https://gamingcampus.fr"><i><img class="circle" src="https://img-cdn.tnwcdn.com/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1267815531391770625%2FcAGe24Ly.jpg&signature=bd635c392b10c6a4ef378e48e4ce42f0" alt="Logo du Gaming Campus"></i></a>
-            <span class="white-text name">Beney Dylan</span>
-            <span class="white-text email">Gabali William</span></div></li>
-            <li class="kyhudji"><a href="kyhudji.php"><i><img src="https://pbs.twimg.com/profile_images/1567358240224153600/iHuX-JWg_400x400.jpg" alt="Logo de William" rel="no-follow"></i>Kyhudji.gg</a></li>
-            <li class="squadhost_nav"><a href="squadHost_.php"><i><img src="img/logo.PNG" alt="Logo de SquadHost_"></i>SquadHost_</a></li>
+            
           </ul>
           <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>

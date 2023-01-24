@@ -1,0 +1,68 @@
+#Formulaire-contact
+html{
+    color: #27201F!important;
+}
+
+footer{
+    background-color: #27201F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.text-contact{
+    margin-left: 100px;
+    color: #eaeaea;
+    font-family:'Bebas Neue', cursive;
+    font-size: 30px;
+}
+
+.contact-b1{
+    display: flex;
+    margin-left: 100px;
+}
+
+input{
+    background-color: #eaeaea;
+    padding: 12px;
+    border: 5px solid #eaeaea;
+    border-radius: 17px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+textarea{
+    background-color: #eaeaea;
+    margin-left: 100px;
+    border: 2px solid #eaeaea;
+    border-radius: 17px;
+    padding: 12px;
+}
+
+.bouton-footer{
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.bouton-footer input{
+    background-color: #2b325a;
+    border: 5px solid #2b325a;
+}
+.bouton-footer input:hover{
+    color: white;
+}
+
+.copiright h3{
+    color: #bbb8b8;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.redirection{
+    margin-right: 250px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
