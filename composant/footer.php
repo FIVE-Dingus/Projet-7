@@ -1,41 +1,34 @@
+<html>  
+  <body>
     <footer class="page-footer">
       <div class="footer">
-        <div class="contact">
-          <div class="text-contact">
-            <h2>Contact</h2>
-          </div>
-          <div class="contact-b1">
-            <div class="contact-l1">
-              <input type="text" id="name" name="name" placeholder="Nom">
+        <div class="row">
+          <div class="contact">
+            <div class="col s11 l5 offset-s1">
+              <h5>A propos</h5>
+              <h6>Qui sommes-nous ?</h6>
+              <h6>Mentions légales</h6>
+              <h6>Politiques de données personnelles </h6>
+              <h6>Cookies</h6>
             </div>
-            <div class="contact-l2">
-              <input type="text" id="prenom" name="prénom" placeholder="Prénom">
-            </div>
-            <div id="contact-l3">
-              <input type="email" id="email" name="email" placeholder="Email">
-            </div>
+            <div class="col s11 l3 offset-s1 offset-l3">
+              <h5>Contact</h5>
+              <h6>GCnews@gamingcampus.fr</h6>
+              <h7>+337 08 09 10 11</h7>
+              <h7>50 Rue de marseille, 69007, Lyon</h7>
+            </div>  
           </div>
-    
-          <div class="contact-b2">
-            <div class="contact-l4">
-              <textarea name="Message" id="message" cols="80" rows="5" placeholder="Message..."></textarea>
-            </div>
+        
+          <div class="redirection col s2 offset-s1">
+            <a href="https://gamingcampus.fr"><img src="img/LOGO_GC.png" alt="Logo Gaming Campus"></a>
           </div>
-    
-          <div class="bouton-footer">
-            <input type="submit" value="Envoyer">
-          </div>
-        </div>
-
-        <div class="redirection">
-          <a href="https://gamingcampus.fr"><img src="img/LOGO_GC.png" alt=""></a>
         </div>
       </div>
-
     </footer>
     <script type="text/javascript" src="js/JqueryMin.js"></script>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </body>
 </html>

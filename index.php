@@ -1,102 +1,109 @@
 <?php require_once "composant/menu.php";?>
 <?php
-$sql = "SELECT * FROM article ORDER BY  importance DESC";
+$sql = "SELECT * FROM article ORDER BY  date DESC";
 $pre = $pdo->prepare($sql);
 $pre->execute();
-$article = $pre->fetchAll(PDO::FETCH_ASSOC);?>
-<body>
-        <div class="row">
-            <div class="col s12 l6 offset-s1 offset-l1">
-                <h2>Actualités</h2>            
-            </div>
-            <div class="col s12">
+$article = $pre->fetchAll(PDO::FETCH_ASSOC);{?>
 
-                <div class="col s12 l4 offset-s1 offset-l1">
-                    <img src="<?php if($article[0]['importance']==4){
-                        echo $article[0]['img1'];}
-                        ?>">
+
+<div class="mainpage row">
+    <div class="title col s10 l6 offset-s1 offset-l2">
+        <h2>Actualités</h2>            
+    </div>
+
+    <div class="col s12">
+
+        <div class="col s10 l4 offset-s1 offset-l2">
+            <div style="position:relative; height:150px">
+                <div style="position:absolute;z-index:1">
+                    <img src="<?php echo $article[0]['img1'];?>">
                 </div>
-                <div class="col s12 l6 offset-l1 ">
-                    <p>
-                    <?php if($article[0]['importance']==4){
-                        echo $article[0]['P1'];}
-                        ?>
-                    </p>
+                <div style="position:relative;left:50px; top:200px; width:200px; height:50px; z-index:2;font-size:200%; @media(min-width : 600px){.article{width : 24.99999%}}">
+                <a href="article.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
                 </div>
             </div>
+        </div>
+        <div class="col s10 l3  offset-s1">
+            <p>
+            <?php echo $article[0]['P1'];?>
+            </p>
+        </div>
+        <div class="col s1 l3">
 
-            <div class="col s12" id="actu_fil">
-                <div class="col s11 offset-s1">
-                    <h2>Dernières actualités</h2>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1 ">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraO77B-wORp7xBbqj6MPrpZw60xyWVYP4JQ&usqp=CAU">
-                    <p>
-                        Ubisoft nous pond encore un truc inutile. French Touch !
-                    </p>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1 ">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQ7i4qP6UM8srWdPT80ihdrHEDA1L_fNHyA&usqp=CAU">
-                    <p>
-                        Ankama sort Waven... pour refermer le jeu. Intérêt ?
-                    </p>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1 ">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSNVJnRLB1sVNXvWR1qvx6VgnHZFs57HQdA&usqp=CAU" >
-                    <p>
-                       Call of Duty : Soda Saga, prochainement ?
-                    </p>
-                </div>
-            </div> 
-
-            
-            <div class="col s12 l12" id="actu_campus">
-                <div class="col s11 l11 offset-s1 offset-l1">
-                    <h2>Infos du campus</h2>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraO77B-wORp7xBbqj6MPrpZw60xyWVYP4JQ&usqp=CAU">
-                    <p>
-                        Un distributeur cassé : l'enquête se poursuit...
-                    </p>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQ7i4qP6UM8srWdPT80ihdrHEDA1L_fNHyA&usqp=CAU">
-                    <p>
-                        AaaAaaAaaAaa une mouette !
-                    </p>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSNVJnRLB1sVNXvWR1qvx6VgnHZFs57HQdA&usqp=CAU" >
-                    <p>
-                       Pourquoi Maître Gims ?
-                    </p>
-                </div>
+        </div>
+    </div>
+    <div class="col s12">
+        <div class="title col s11 offset-s1 offset-l2">
+            <h2>Dernières actualités</h2>
+        </div>
+        <div>
+            <div class="col s10 l2 offset-s1 offset-l2 ">
+                <img src="<?php echo $article[1]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
             </div>
-            
-            
-            <div class="col s12 l12" id="actu_asso">
-                <div class="col s11 l11 offset-s1 offset-l1">
-                    <h2>Vie Associative</h2>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraO77B-wORp7xBbqj6MPrpZw60xyWVYP4JQ&usqp=CAU">
-                    <p>
-                        Soirée crêpes de l'ADE
-                    </p>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQ7i4qP6UM8srWdPT80ihdrHEDA1L_fNHyA&usqp=CAU">
-                    <p>
-                        Katochi nous présente les coulisses
-                    </p>
-                </div>
-                <div class="col s12 l3 offset-s1 offset-l1">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSNVJnRLB1sVNXvWR1qvx6VgnHZFs57HQdA&usqp=CAU" >
-                    <p>
-                       Oui. 
-                    </p>
-                </div>
-            </div> 
-        </div>   
-    <?php require_once "composant/footer.php";?>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[2]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[3]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[4]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[4]['id']?>" ><?php echo $article[4]['titre'];?></a>
+            </div>
+        </div>
+    </div> 
+<?php } ?>
+    
+    <div class="row col s12 l12">
+        <div class="title col s10 l12 offset-s1 offset-l2">
+            <h2>Infos du campus</h2>
+        </div>
+        <div class="col s10 l2 offset-s1 offset-l2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraO77B-wORp7xBbqj6MPrpZw60xyWVYP4JQ&usqp=CAU">
+            <p>
+                Un distributeur cassé : l'enquête se poursuit...
+            </p>
+        </div>
+        <div class="col s10 l2 offset-s1 offset-0.5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQ7i4qP6UM8srWdPT80ihdrHEDA1L_fNHyA&usqp=CAU">
+            <p>
+                AaaAaaAaaAaa une mouette !
+            </p>
+        </div>
+        <div class="col s10 l2 offset-s1 offset-0.5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSNVJnRLB1sVNXvWR1qvx6VgnHZFs57HQdA&usqp=CAU" >
+            <p>
+                Pourquoi Maître Gims ?
+            </p>
+        </div>
+    </div>
+    
+    
+    <div class="row col s12 l12">
+        <div class="title col s10 l12 offset-s1 offset-l2">
+            <h2>Vie Associative</h2>
+        </div>
+        <div class="col s10 l2 offset-s1 offset-l2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraO77B-wORp7xBbqj6MPrpZw60xyWVYP4JQ&usqp=CAU">
+            <p>
+                Soirée crêpes de l'ADE
+            </p>
+        </div>
+        <div class="col s10 l2 offset-s1 offset-0.5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQ7i4qP6UM8srWdPT80ihdrHEDA1L_fNHyA&usqp=CAU">
+            <p>
+                Katochi nous présente les coulisses
+            </p>
+        </div>
+        <div class="col s10 l2 offset-s1 ">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSNVJnRLB1sVNXvWR1qvx6VgnHZFs57HQdA&usqp=CAU" >
+            <p>
+                Oui. 
+            </p>
+        </div>
+    </div> 
+</div>   
+<?php require_once "composant/footer.php";?>

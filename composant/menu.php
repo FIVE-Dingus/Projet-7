@@ -4,6 +4,7 @@
   <head>
     <title>Projet 7 : GC News</title>
     <meta name="description" content="Ce site est un Portfolio de William Gabali et de Dylan Beney, deux GigaChad">
+    <meta name="google-signin-client_id" content="191504532339-afernn1nkoggl6rcvunsp3roi4dvv57h.apps.googleusercontent.com">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -13,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap" rel="stylesheet">
     <meta charset="utf-8">
+
     
 
     <!--Let browser know website is optimized for mobile-->
@@ -20,67 +22,88 @@
   </head>
   <body>
     <header>
-      <nav>
-        <div class="nav-wrapper white black-text" >
-        <?php
-        require_once "cfg/config.php";
-        if(isset($_SESSION['user'])){
-            echo "<a href='action/logout.php'><img src='img/icons8-sortie-50.png' alt='' height=100% ></a>";
-        }elseif(isset($_SESSION['error'])){
-            echo ($_SESSION['error']);
-            unset($_SESSION['error']);
-        }else{
-          echo "Vous n'êtes pas connecté";
-        }
-        ?>
-        <?php if(!isset($_SESSION['user'])){ ?>
-          <a class="waves-effect waves-light btn modal-trigger black" href="#modal2">Inscrivez vous</a>
-          <div id="modal2" class="modal">
-                <form method="post" action="action/register.php">
-                <label for="#email">Votre email</label>
-                <input id="email" type='email' name='email'>
-                <label for="#password">Votre Mot de passe</label>
-                <input id="password" type='password' name='password'>
-                <label for="#username">Votre pseudo</label>
-                <input id="username" type='username' name='username'>
-                <label for="#fname">Votre prénom</label>
-                <input id="fname" type='fname' name='fname'>
-                <label for="#name">Votre nom</label>
-                <input id="name" type='name' name='name'>
-                <input type='submit' value='se register' />
-            </form>
-          </div>
-          <a class="waves-effect waves-light btn modal-trigger black" href="#modal3">Connectez vous</a>
-          <div id="modal3" class="modal">
-            <form method="post" action="action/login.php">
-                <label for="#email">Votre email</label>
-                <input id="email" type='email' name='email'>
-                <label for="#password">Votre Mot de passe</label>
-                <input id="password" type='password' name='password'>
-                <input type='submit' value='se connecter' />
-            </form>
-          </div>
-        <?php } ?>
-            <a href="index.php" class="brand-logo">Accueil</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <?php
-                $sql = "SELECT * FROM article";
-                $pre = $pdo->prepare($sql);
-                $pre->execute();
-                $datas = $pre->fetchAll(PDO::FETCH_ASSOC);
-                foreach($datas as $article);
-                require_once "cfg/config.php";
-                if(isset($_SESSION['user'])){
-                    if($_SESSION['user']['admin']==1){
-                        echo "<li><a href='admin.php' text-decoration:none><img src='img/icons8-parametres-administrateur-homme-50.png'></a></li>";}}
-                foreach($datas as $article){ ?>
-                    <li><a href="article.php?id=<?php echo $article['id']?>"><?php echo $article['titre']?></a></li>
-                <?php }?>
-                
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#">TENDANCES</a></li>
+      <li><a href="#">JEU VIDÉO</a></li>
+      <li><a href="#">ESPORT</a></li>
+      <li><a href="#">POLITIQUE</a></li>
+      <li><a href="#">DESIGN</a></li>
+      <li><a href="#">BUSINESS</a></li>
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="#">SPÉCIAL GBUSINESS</a></li>
+      <li><a href="#">SPÉCIAL GART</a></li>
+      <li><a href="#">SPÉCIAL GTECH</a></li>
+      <li><a href="#">RÉCENTS</a></li>
+      <li><a href="#">NON RÉCENTS</a></li>
+      <li><a href="#">ARCHIVES</a></li>
+    </ul>
+    
+      <nav style="padding-top: 3%;">
+        <div class="nav-wrapper" style="color:#27201F;" >
+            <ul id="nav-mobile" class="hide-on-med-and-down">
+              <div class="row">
+                <div class="col s5 offset-s1">
+                  <div class="col s1 l2">
+                  <a href="index.php"><img style="width: 55px;" src="img/BDE.png.png"></a>
+                  </div>
+                  <div class="col s10" style="padding-right:0px" >
+                    <h3 style="font-size: 15px; margin-top:15px; margin-bottom:0px;"><b>GC NEWS</b></h3>
+                    <p style="font-size: 12px; margin:0px; height:28px; line-height: 1;">Toute l'actualité du jeu vidéo et du Gaming Campus à votre portée !</p>
+                  </div>
+                </div>
+              
+                <div class="col s3 offset-s1">
+                  <ul class="menu">
+                        <li class="titlenav">
+                          <a class="txt_actu" href="#">ACTUALITÉS</a>
+                          <ul class="sous-menu dropdown-content">
+                            <li><a href="#">TENDANCES</a></li>
+                            <li><a href="#">JEU VIDÉO</a></li>
+                            <li><a href="#">ESPORT</a></li>
+                            <li><a href="#">POLITIQUE</a></li>
+                            <li><a href="#">DESIGN</a></li>
+                            <li><a href="#">BUSINESS</a>
+                              <ul class="sous-menu2 dropdown-content">
+                                  <li><a href="#">SPÉCIAL GBUSINESS</a></li>
+                                  <li><a href="#">SPÉCIAL GART</a></li>
+                                  <li><a href="#">SPÉCIAL GTECH</a></li>
+                                  <li><a href="#">RÉCENTS</a></li>
+                                  <li><a href="#">NON RÉCENTS</a></li>
+                                  <li><a href="#">ARCHIVES</a></li>
+                              </ul>
+                            </li>
+                          </ul>  
+                        </li>
+                      
+                        
+                        <li class="titlenav">
+                          <a class="txt_camp" href="#">CAMPUS</a>
+                          <ul class="sous-menu dropdown-content">
+                            <li><a href="#">PROJET EN COURS</a></li>
+                            <li><a href="#">CONCOURS</a></li>
+                            <li><a href="#">OBJETS PERDUS/ TROUVÉS</a></li>
+                          </ul>
+                        </li>
+                      
+                        
+                      <li class="titlenav">
+                        <a class="txt_vie" href="#">VIE ASSOCIATIVE</a>
+                        <ul class="sous-menu dropdown-content">
+                          <li><a href="#">KATOCHI</a></li>
+                          <li><a href="#">BDE</a></li>
+                          <li><a href="#">GENIUS</a></li>
+                          <li><a href="#">2RIVALS</a></li>
+                          <li><a href="#">WEB FACTORY</a></li>
+                        </ul> 
+                      </li> 
+                    </ul> 
+                </div>  
+              </div>
             </ul>
           <ul id="slide-out" class="sidenav">
             <li><div class="user-view">
-            
+            </div>
           </ul>
           <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>

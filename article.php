@@ -1,38 +1,40 @@
-<?php require_once "composant/menu.php";?>
+<?php require_once "composant/menu.php"; ?>
 <?php
 $sql = "SELECT * FROM article WHERE id=".$_GET['id'];
 $pre = $pdo->prepare($sql);
 $pre->execute();
-$article = $pre->fetchAll(PDO::FETCH_ASSOC);?>
-<body>
+$article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
 
-<div class="row">
-    <div class="col s11 l6 offset-s1 offset-l1">
-        <h2>
+
+<div class="article row">
+    <div class="title col s11 m10 l8 offset-s1 offset-m2 offset-l2">
+        <h2> <!--titre de la page-->
             <?php echo $article[0]['titre'] ?>
         </h2>
     </div>
 </div>
 
-<div class="row">
-    <div class="col s12">
-        <div class="col s11 l5 offset-l1 offset-s1">
-            <img src="<?php echo $article[0]['img1'] ?>">
+<div class="article row">
+    <div class="col s12 m12 l12">
+        <div class="col s10 m5 l7 offset-s1 offset-m1 offset-l1">
+            <img src="<?php echo $article[0]['img1'] ?>" alt="image 2 de l'article">
         </div>
-        <div class="col s11 l5 offset-l1 offset-s1"> 
-            <p><?php echo $article[0]['P1'] ?></p>
+        <div class="col s10 m5 l2">
+            <p id="p1"><?php echo $article[0]['P1'] ?></p>
         </div>
     </div>
+    <!--premieres image et paragraphe de la page-->
 
-    <div class="col s12 l11 offset-l1"> 
+    <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1 ">
         <p><?php echo $article[0]['P2'] ?></p>
     </div>
-    
-    <div class="col s12 l11 offset-l1">
-        <img src="<?php echo $article[0]['img2'] ?>">
+    <!--2eme paragraphe de la page-->
+
+    <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+        <img src="<?php echo $article[0]['img2'] ?>" alt="image 2 de l'article">
     </div>
+    <!--2eme image de la page-->
 
 </div>
 
-
-<?php require_once "composant/footer.php";?>
+<?php require_once "composant/footer.php"; ?>
