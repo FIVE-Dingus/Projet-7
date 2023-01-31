@@ -22,7 +22,6 @@
               <a href="#!"><img src="img/twitter-circle-32.png" style="width: 30px;"></a>
               <a href="#!"><img src="img/instagram.png" style="width: 28px;"></a>
               <a href="https://www.twitch.tv/tranquilouman"><img src="img/twitch-1-32.png" style="width: 28px;"></a>
-
             </div>
           </div>
         </div>
