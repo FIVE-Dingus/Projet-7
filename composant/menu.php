@@ -1,4 +1,6 @@
-<?php require_once "cfg/config.php"?>
+<?php require_once "cfg/config.php";
+ ?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -22,14 +24,6 @@
   </head>
   <body>
     <header>
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#">TENDANCES</a></li>
-      <li><a href="#">JEU VIDÉO</a></li>
-      <li><a href="#">ESPORT</a></li>
-      <li><a href="#">POLITIQUE</a></li>
-      <li><a href="#">DESIGN</a></li>
-      <li><a href="#">BUSINESS</a></li>
-    </ul>
     <ul id="dropdown2" class="dropdown-content">
       <li><a href="#">SPÉCIAL GBUSINESS</a></li>
       <li><a href="#">SPÉCIAL GART</a></li>
@@ -38,7 +32,26 @@
       <li><a href="#">NON RÉCENTS</a></li>
       <li><a href="#">ARCHIVES</a></li>
     </ul>
-    
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">TENDANCES</a></li>
+      <li><a href="#!">JEU VIDÉO</a></li>
+      <li><a href="#!">ESPORT</a></li>
+      <li><a href="#!">POLITIQUE</a></li>
+      <li><a href="#!">DESIGN</a></li>
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">BUSINESS</a></li>
+    </ul>
+    <ul id="dropdown3" class="dropdown-content">
+      <li><a href="#!">PROJET EN COURS</a></li>
+      <li><a href="#!">CONCOURS</a></li>
+      <li><a href="#!">OBJETS PERDUS/ TROUVÉS</a></li>
+    </ul>
+    <ul id="dropdown4" class=" dropdown-content">
+      <li><a href="#">KATOCHI</a></li>
+      <li><a href="#">BDE</a></li>
+      <li><a href="#">GENIUS</a></li>
+      <li><a href="#">2RIVALS</a></li>
+      <li><a href="#">WEB FACTORY</a></li>
+    </ul> 
       <nav style="padding-top: 3%;">
         <div class="nav-wrapper" style="color:#27201F;" >
             <ul id="nav-mobile" class="hide-on-med-and-down">
@@ -47,65 +60,41 @@
                   <div class="col s1 l2">
                   <a href="index.php"><img style="width: 55px;" src="img/BDE.png.png"></a>
                   </div>
-                  <div class="col s10" style="padding-right:0px" >
+                  <div class="col s9" style="padding-right:0px" >
                     <h3 style="font-size: 15px; margin-top:15px; margin-bottom:0px;"><b>GC NEWS</b></h3>
                     <p style="font-size: 12px; margin:0px; height:28px; line-height: 1;">Toute l'actualité du jeu vidéo et du Gaming Campus à votre portée !</p>
                   </div>
                 </div>
               
-                <div class="col s3 offset-s1">
+                <div class="col s4">
                   <ul class="menu">
-                        <li class="titlenav">
-                          <a class="txt_actu" href="#">ACTUALITÉS</a>
-                          <ul class="sous-menu dropdown-content">
-                            <li><a href="#">TENDANCES</a></li>
-                            <li><a href="#">JEU VIDÉO</a></li>
-                            <li><a href="#">ESPORT</a></li>
-                            <li><a href="#">POLITIQUE</a></li>
-                            <li><a href="#">DESIGN</a></li>
-                            <li><a href="#">BUSINESS</a>
-                              <ul class="sous-menu2 dropdown-content">
-                                  <li><a href="#">SPÉCIAL GBUSINESS</a></li>
-                                  <li><a href="#">SPÉCIAL GART</a></li>
-                                  <li><a href="#">SPÉCIAL GTECH</a></li>
-                                  <li><a href="#">RÉCENTS</a></li>
-                                  <li><a href="#">NON RÉCENTS</a></li>
-                                  <li><a href="#">ARCHIVES</a></li>
-                              </ul>
-                            </li>
-                          </ul>  
-                        </li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">ACTUALITÉS</a></li>
                       
-                        
-                        <li class="titlenav">
-                          <a class="txt_camp" href="#">CAMPUS</a>
-                          <ul class="sous-menu dropdown-content">
-                            <li><a href="#">PROJET EN COURS</a></li>
-                            <li><a href="#">CONCOURS</a></li>
-                            <li><a href="#">OBJETS PERDUS/ TROUVÉS</a></li>
-                          </ul>
-                        </li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">CAMPUS</a></li>
                       
-                        
-                      <li class="titlenav">
-                        <a class="txt_vie" href="#">VIE ASSOCIATIVE</a>
-                        <ul class="sous-menu dropdown-content">
-                          <li><a href="#">KATOCHI</a></li>
-                          <li><a href="#">BDE</a></li>
-                          <li><a href="#">GENIUS</a></li>
-                          <li><a href="#">2RIVALS</a></li>
-                          <li><a href="#">WEB FACTORY</a></li>
-                        </ul> 
-                      </li> 
-                    </ul> 
-                </div>  
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown4">VIE ASSOCIATIVE</a></li> 
+                  </ul> 
+                </div> 
+                <div class="col s2">
+                  <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+                  
+                  <?php 
+                  if(isset($_SESSION['user'])){
+                    echo "<li><a href='admin.php'><i class='material-icons'>account_circle</i></a></li>";
+                    echo "<li><a href='action/logout.php'><i class='material-icons'>exit_to_app</i></a></i>";
+                    }else{
+                      
+                    }
+                    ?>
+                </div> 
               </div>
+              
             </ul>
           <ul id="slide-out" class="sidenav">
             <li><div class="user-view">
             </div>
           </ul>
-          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="connexion.php" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>
       </nav>
     </header>

@@ -1,9 +1,16 @@
-<?php require_once "composant/menu.php";?>
+<?php require_once "composant/menu.php";
+ if(!isset($_SESSION['user'])){
+  header('location:connexion.php');
+ }?>
 <?php
-$sql = "SELECT * FROM article ORDER BY  date DESC";
+$sql = "SELECT * FROM derniere_actu ORDER BY  date DESC";
 $pre = $pdo->prepare($sql);
 $pre->execute();
-$article = $pre->fetchAll(PDO::FETCH_ASSOC);{?>
+$article = $pre->fetchAll(PDO::FETCH_ASSOC);
+if (isset($_SESSION['user'])) { 
+    $user = $_SESSION['user'];
+} {?>
+
 
 
 <div class="mainpage row">

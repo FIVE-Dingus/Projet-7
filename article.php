@@ -1,6 +1,9 @@
-<?php require_once "composant/menu.php"; ?>
+<?php require_once "composant/menu.php"; 
+ if(!isset($_SESSION['user'])){
+  header('location:connexion.php');
+ }?>
 <?php
-$sql = "SELECT * FROM article WHERE id=".$_GET['id'];
+$sql = "SELECT * FROM derniere_actu WHERE id=".$_GET['id'];
 $pre = $pdo->prepare($sql);
 $pre->execute();
 $article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
@@ -8,16 +11,18 @@ $article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
 
 <div class="article row">
     <div class="title col s11 m10 l8 offset-s1 offset-m2 offset-l2">
-        <h2> <!--titre de la page-->
+        <h2>
+            <b> <!--titre de la page-->
             <?php echo $article[0]['titre'] ?>
+</b>
         </h2>
     </div>
 </div>
 
 <div class="article row">
     <div class="col s12 m12 l12">
-        <div class="col s10 m5 l7 offset-s1 offset-m1 offset-l1">
-            <img src="<?php echo $article[0]['img1'] ?>" alt="image 2 de l'article">
+        <div class="col s10 m5 l6 offset-s1 offset-m1 offset-l1">
+            <img src="<?php echo $article[0]['img1'] ?>" alt="image 1 de l'article">
         </div>
         <div class="col s10 m5 l2">
             <p id="p1"><?php echo $article[0]['P1'] ?></p>

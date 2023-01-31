@@ -61,8 +61,15 @@ nav a:hover{
     background-color: RGBa(200,200,200,0.1) !important;
   }
   
-
-
+.dropdown-content li {
+    clear: both;
+    color: rgba(0,0,0,0.87);
+    cursor: pointer;
+    min-height: 50px;
+    line-height: 1.5rem;
+    width: 100%;
+    text-align: left;
+}
 /* fin nav bar */ 
 
 /* Homepage CSS */
