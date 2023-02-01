@@ -18,9 +18,9 @@ if (isset($_SESSION['user'])) {
         <h2>Actualités</h2>            
     </div>
 
-    <div class="col s12">
+    <div class="col s12 l12">
 
-        <div class="col s10 l4 offset-s1 offset-l2">
+        <div class="col s10 l5 offset-s1 offset-l2">
             <div style="position:relative; height:150px">
                 <div style="position:absolute;z-index:1">
                     <img src="<?php echo $article[0]['img1'];?>">
@@ -35,12 +35,12 @@ if (isset($_SESSION['user'])) {
             <?php echo $article[0]['P1'];?>
             </p>
         </div>
-        <div class="col s1 l3">
+        <div class="col s1 ">
 
         </div>
     </div>
-    <div class="col s12">
-        <div id="actu" class="title col s11 l10 offset-s1 offset-l2">
+    <div class="col s12 l12" style="padding-top: 10%;">
+        <div id="actu" class="title col s11 l9 offset-s1 offset-l2">
             <h2>Dernières actualités</h2>
         </div>
         <div>
@@ -77,7 +77,11 @@ if (isset($_SESSION['user'])) {
         </div>
         <div>
             <div class="col s10 l2 offset-s1 offset-l2 ">
-                <img src="<?php echo $article[1]['img1']; ?>">
+                <img src="<?php echo $article[0]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[1]['img1']; ?>">
                 <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
@@ -87,10 +91,6 @@ if (isset($_SESSION['user'])) {
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[3]['img1']; ?>">
                 <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
-            </div>
-            <div class="col s10 l2 offset-s1 offset-l0.5 ">
-            <img src="<?php echo $article[4]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[4]['id']?>" ><?php echo $article[4]['titre'];?></a>
             </div>
         </div>
     </div>
@@ -109,7 +109,11 @@ if (isset($_SESSION['user'])) {
         </div>
         <div>
             <div class="col s10 l2 offset-s1 offset-l2 ">
-                <img src="<?php echo $article[1]['img1']; ?>">
+                <img src="<?php echo $article[0]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[1]['img1']; ?>">
                 <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
@@ -119,10 +123,6 @@ if (isset($_SESSION['user'])) {
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[3]['img1']; ?>">
                 <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
-            </div>
-            <div class="col s10 l2 offset-s1 offset-l0.5 ">
-            <img src="<?php echo $article[4]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[4]['id']?>" ><?php echo $article[4]['titre'];?></a>
             </div>
         </div>
     </div> 
