@@ -109,7 +109,11 @@ if(!isset($_SESSION['user'])){
                 </div>
             </div>
         </div>
-<form method="post" action="action/add_arcticle_asso.php" enctype="multipart/form-data">
+
+
+<?php require_once "composant/footer.php";?>
+
+<!-- <form method="post" action="action/add_arcticle_asso.php" enctype="multipart/form-data">
     <label for="#titre">Titre</label>
     <input id="titre" type='title' name='titre'>
     <label for="#img1">Première image de l'article</label>
@@ -121,8 +125,4 @@ if(!isset($_SESSION['user'])){
     <label for="#P2">Paragraphe n°2</label>
     <input id="P2" type='text' name='P2'>
     <input type='submit' value="Créer l'article" />
-</form>
-
-<?php require_once "composant/footer.php";?>
-
-<!--  -->
+</form> -->

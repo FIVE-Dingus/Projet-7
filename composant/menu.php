@@ -71,7 +71,7 @@
             </div>
               <?php 
               if(isset($_SESSION['user'])){
-                echo "<div class='col s2'><li><a href='admin.php'><i class='material-icons'>account_circle</i></a></li></div>";
+                echo "<div class='col s2'><li style='width:50px'><a href='admin.php'><i class='material-icons'>account_circle</i></a></li></div>";
                 echo "<div class='col s2'><li><a href='action/logout.php'><i class='material-icons'>exit_to_app</i></a></i></div>";
                 }else{
                   

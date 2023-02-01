@@ -1,5 +1,5 @@
 <?php require_once "composant/menu.php";
- if(!isset($_SESSION['user'])){
+ if (!isset($_SESSION['user'])) {
   header('location:connexion.php');
  }?>
 <?php
@@ -26,18 +26,19 @@ if (isset($_SESSION['user'])) {
                     <img src="<?php echo $article[0]['img1'];?>">
                 </div>
                 <div style="position:relative;left:50px; top:200px; width:200px; height:50px; z-index:2;font-size:200%; @media(min-width : 600px){.article{width : 24.99999%}}">
-                <a href="article.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
+                <a href="actu.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
                 </div>
             </div>
         </div>
-        <div class="col s10 l3  offset-s1">
+        <div class="col s12 l1" style="padding-top:17%;">
+
+        </div>
+        <div class="col s10 l2 offset-s1">
             <p>
             <?php echo $article[0]['P1'];?>
             </p>
         </div>
-        <div class="col s1 ">
-
-        </div>
+        
     </div>
     <div class="col s12 l12" style="padding-top: 10%;">
         <div id="actu" class="title col s11 l9 offset-s1 offset-l2">
@@ -46,19 +47,19 @@ if (isset($_SESSION['user'])) {
         <div>
             <div class="col s10 l2 offset-s1 offset-l2 ">
                 <img src="<?php echo $article[1]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
+                <a href="actu.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[2]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
+                <a href="actu.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[3]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
+                <a href="actu.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[4]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[4]['id']?>" ><?php echo $article[4]['titre'];?></a>
+                <a href="actu.php?id=<?php echo $article[4]['id']?>" ><?php echo $article[4]['titre'];?></a>
             </div>
         </div>
     </div> 
@@ -78,19 +79,19 @@ if (isset($_SESSION['user'])) {
         <div>
             <div class="col s10 l2 offset-s1 offset-l2 ">
                 <img src="<?php echo $article[0]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
+                <a href="campus_actu.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[1]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
+                <a href="campus_actu.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[2]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
+                <a href="campus_actu.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[3]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
+                <a href="campus_actu.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
             </div>
         </div>
     </div>
@@ -100,7 +101,7 @@ $sql = "SELECT * FROM vie_associative ORDER BY  date DESC";
 $pre = $pdo->prepare($sql);
 $pre->execute();
 $article = $pre->fetchAll(PDO::FETCH_ASSOC);
-if (isset($_SESSION['user'])) { 
+if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
 } {?>
     <div class="row col s12 l12">
@@ -110,19 +111,19 @@ if (isset($_SESSION['user'])) {
         <div>
             <div class="col s10 l2 offset-s1 offset-l2 ">
                 <img src="<?php echo $article[0]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
+                <a href="vie_associative.php?id=<?php echo $article[0]['id']?>" ><?php echo $article[0]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[1]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
+                <a href="vie_associative.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[2]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
+                <a href="vie_associative.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
             </div>
             <div class="col s10 l2 offset-s1 offset-l0.5 ">
             <img src="<?php echo $article[3]['img1']; ?>">
-                <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
+                <a href="vie_associative.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
             </div>
         </div>
     </div> 
