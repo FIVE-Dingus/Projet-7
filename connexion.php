@@ -44,10 +44,10 @@ echo "<div class='connexion row'>
     }
 
     if(!isset($_SESSION['user'])){
-        echo " <div class='col s4 offset-s2'>
+        echo " <div class='col s10 l4 offset-s1 offset-l2'>
                     <img src='Img/GC_connexion.jpeg' alt=''>
                 </div>
-                <div class='col s4'>
+                <div class='col s10 l3 offset-s1 offset-1'>
                     <h1>Connexion</h1>
                     <p>Ce site est réservé aux membres du Gaming Campus. 
                     Veuillez vous connecter avec votre compte Google / Gaming Campus</p>

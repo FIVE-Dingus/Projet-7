@@ -12,7 +12,23 @@ if(!isset($_SESSION['user'])){
  if($user['admin']==0){
   header('location:index.php');}};
 ?>
-<form method="post" action="action/add_arcticle.php" enctype="multipart/form-data">
+
+<html>
+    <body>
+        <div class="row">
+            <div class="col l3">
+                <div class="container white-background">
+                    <h3>Test</h3>
+                </div>    
+            </div>
+            <div class="col l9">
+                <div class="container grey-background">
+            </div>    
+        </div>
+
+<?php require_once "composant/footer.php";?>
+
+<!-- <form method="post" action="action/add_arcticle.php" enctype="multipart/form-data">
     <label for="#titre">Titre</label>
     <input id="titre" type='title' name='titre'>
     <label for="#img1">Première image de l'article</label>
@@ -24,6 +40,4 @@ if(!isset($_SESSION['user'])){
     <label for="#P2">Paragraphe n°2</label>
     <input id="P2" type='text' name='P2'>
     <input type='submit' value="Créer l'article" />
-</form>
-
-<?php require_once "composant/footer.php";?>
+</form> -->
