@@ -1,55 +1,55 @@
-<?php 
+<?php
 require_once "composant/menu.php";
 require_once "vendor/autoload.php";
 
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
     header('location:index.php');
 }
 
 echo "<div class='connexion row'>
         <div class='title col s12'>";
-    if (!empty($_POST['credential'])){
+if (!empty($_POST['credential'])) {
 
 
-        if (empty($_COOKIE['g_csrf_token']) || empty($_POST['g_csrf_token']) || $_COOKIE['g_csrf_token'] != $_POST['g_csrf_token']){
-            echo "Erreur verification jeton CSRF";
-            exit();
-        }
-
-        $CLIENT_ID = "191504532339-afernn1nkoggl6rcvunsp3roi4dvv57h.apps.googleusercontent.com";
-        $client = new Google_Client(['client_id' => $CLIENT_ID]);  // Specify the CLIENT_ID of the app that accesses the backend
-        $id_token = $_POST['credential'];
-        $user = $client->verifyIdToken($id_token);
-        if($user) {
-            $_SESSION['user'] = $user;
-                $lol = "SELECT email FROM user WHERE email=".$_GET['email'];
-                $fun = $pdo->prepare($lol);
-                $fun->execute();
-                $connect = $fun->fetchAll(PDO::FETCH_ASSOC);
-                foreach($connect as $email){
-                if($user['email']==$email['email']){
-                    echo "lol";
-                }else{
-                    $sql = "INSERT INTO user(email) VALUES(:email)";
-                    $dataBinded=array(
-                        ':email'   => $user['email']
-                    );
-                    $pre = $pdo->prepare($sql);
-                    $pre->execute($dataBinded);
-                }} //fin de la boucle
-            header('location:index.php');
-            exit();
-            
-        } 
+    if (empty($_COOKIE['g_csrf_token']) || empty($_POST['g_csrf_token']) || $_COOKIE['g_csrf_token'] != $_POST['g_csrf_token']) {
+        echo "Erreur verification jeton CSRF";
+        exit();
     }
 
-    if(!isset($_SESSION['user'])){
-        echo " <div class='col s4 offset-s2'>
+    $CLIENT_ID = "191504532339-afernn1nkoggl6rcvunsp3roi4dvv57h.apps.googleusercontent.com";
+    $client = new Google_Client(['client_id' => $CLIENT_ID]);  // Specify the CLIENT_ID of the app that accesses the backend
+    $id_token = $_POST['credential'];
+    $user = $client->verifyIdToken($id_token);
+    if ($user) {
+        $_SESSION['user'] = $user;
+        $lol = "SELECT email FROM user WHERE email='" . $_SESSION['user']['email'] . "'";
+        $fun = $pdo->prepare($lol);
+        $fun->execute();
+        $connect = $fun->fetchAll(PDO::FETCH_ASSOC);
+        $count = $fun->rowCount();
+            if ($count == 0) {
+                $sql = "INSERT INTO user(email) VALUES(:email)";
+                $dataBinded = array(
+                    ':email'   => $_SESSION['user']['email']
+                );
+                $pre = $pdo->prepare($sql);
+                $pre->execute($dataBinded);
+            } else {
+                echo $_SESSION['user']['email'];
+            }; //fin de la boucle
+        header('location:index.php');
+
+        exit();
+    }
+}
+
+if (!isset($_SESSION['user'])) {
+    echo " <div class='col s10 l4 offset-s1 offset-l2'>
                     <img src='Img/GC_connexion.jpeg' alt=''>
                 </div>
-                <div class='col s4'>
-                    <h1>Connexion</h1>
-                    <p>Ce site est réservé aux membres du Gaming Campus. 
+                <div class='col s10 l3 offset-s1 offset-1'>
+                    <h1 style='text-align: center'>Connexion</h1>
+                    <p style='text-align: center'>Ce site est réservé aux membres du Gaming Campus. 
                     Veuillez vous connecter avec votre compte Google / Gaming Campus</p>
                         <div id='g_id_onload'
                             data-client_id='191504532339-afernn1nkoggl6rcvunsp3roi4dvv57h.apps.googleusercontent.com'
@@ -69,15 +69,15 @@ echo "<div class='connexion row'>
                     data-logo_alignment='left'>
                 </div>
             </div>";
-    }else{
-    }
-    
+} else {
+}
+
 ?>
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-        
-    </div>
+
+</div>
 </div>
 
-<?php require_once "composant/footer.php";?>
+<?php require_once "composant/footer.php"; ?>

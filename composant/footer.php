@@ -17,7 +17,7 @@
               <h7>+337 08 09 10 11</h7>
               <h7>50 Rue de marseille, 69007, Lyon</h7>
             </div>
-            <div class="col s2 l3 offset-l1 offset-s5"> 
+            <div class="col s5 l3 offset-l1 offset-s3"> 
               <a href="#!"><i class="material-icons" style="font-size: 30px;">facebook</i></a>
               <a href="#!"><img src="img/twitter-circle-32.png" style="width: 30px;"></a>
               <a href="#!"><img src="img/instagram.png" style="width: 28px;"></a>

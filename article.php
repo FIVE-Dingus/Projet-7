@@ -24,7 +24,7 @@ $article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
         <div class="col s10 m5 l6 offset-s1 offset-m1 offset-l1">
             <img src="<?php echo $article[0]['img1'] ?>" alt="image 1 de l'article">
         </div>
-        <div class="col s10 m5 l2">
+        <div class="col s10 m5 l2 offset-s1">
             <p id="p1"><?php echo $article[0]['P1'] ?></p>
         </div>
     </div>

@@ -8,7 +8,7 @@ $destination2 = "img/".$_FILES['img2']['name'];
 move_uploaded_file($_FILES['img2']['tmp_name'],"../".$destination2);
 
 
-$sql = "INSERT INTO article(titre,img1,img2,P1,P2) VALUES(:titre,:img1,:img2,:P1,:P2)";
+$sql = "INSERT INTO derniere_actu(titre,img1,img2,P1,P2) VALUES(:titre,:img1,:img2,:P1,:P2)";
 $dataBinded=array(
     ':titre' => $_POST['titre'],
     ':img1' => $destination1,

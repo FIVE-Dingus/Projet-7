@@ -150,13 +150,10 @@ img{
     font-weight: bold;
 }
 
-div #p1{
-    text-align: center;
-}
+
 /* fin page article */ 
 
 /* page connexion */
-
 
 
 /* fin */
@@ -165,7 +162,7 @@ div #p1{
 footer{
     background-image: url(img/footer.png);
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 10px;   
 }
 
 footer .footer{
