@@ -18,7 +18,7 @@ if(!isset($_SESSION['user'])){
         <div class="row">
             <div class="col l3">
                 <div class="container white-background">
-                    <h3>Test</h3>
+                    <h3>Dashborad</h3>
                 </div>    
             </div>
             <div class="col l9">

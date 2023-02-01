@@ -69,7 +69,7 @@
             <div class="col s1 offset-s2">
               <li><a href="sass.html"><i class="material-icons">search</i></a></li>
             </div>
-            <div></div>
+            <div class="col s2">
               <?php 
               if(isset($_SESSION['user'])){
                 echo "<li><a href='admin.php'><i class='material-icons'>account_circle</i></a></li>";
