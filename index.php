@@ -40,7 +40,7 @@ if (isset($_SESSION['user'])) {
         </div>
     </div>
     <div class="col s12">
-        <div class="title col s11 offset-s1 offset-l2">
+        <div id="actu" class="title col s11 l10 offset-s1 offset-l2">
             <h2>Dernières actualités</h2>
         </div>
         <div>
@@ -63,54 +63,69 @@ if (isset($_SESSION['user'])) {
         </div>
     </div> 
 <?php } ?>
-    
+<?php
+$sql = "SELECT * FROM campus_actus ORDER BY  date DESC";
+$pre = $pdo->prepare($sql);
+$pre->execute();
+$article = $pre->fetchAll(PDO::FETCH_ASSOC);
+if (isset($_SESSION['user'])) { 
+    $user = $_SESSION['user'];
+} {?>
     <div class="row col s12 l12">
-        <div class="title col s10 l12 offset-s1 offset-l2">
+        <div id="camp" class="title col s10 l10 offset-s1 offset-l2">
             <h2>Infos du campus</h2>
         </div>
-        <div class="col s10 l2 offset-s1 offset-l2">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraO77B-wORp7xBbqj6MPrpZw60xyWVYP4JQ&usqp=CAU">
-            <p>
-                Un distributeur cassé : l'enquête se poursuit...
-            </p>
-        </div>
-        <div class="col s10 l2 offset-s1 offset-0.5">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQ7i4qP6UM8srWdPT80ihdrHEDA1L_fNHyA&usqp=CAU">
-            <p>
-                AaaAaaAaaAaa une mouette !
-            </p>
-        </div>
-        <div class="col s10 l2 offset-s1 offset-0.5">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSNVJnRLB1sVNXvWR1qvx6VgnHZFs57HQdA&usqp=CAU" >
-            <p>
-                Pourquoi Maître Gims ?
-            </p>
+        <div>
+            <div class="col s10 l2 offset-s1 offset-l2 ">
+                <img src="<?php echo $article[1]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[2]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[3]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[4]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[4]['id']?>" ><?php echo $article[4]['titre'];?></a>
+            </div>
         </div>
     </div>
-    
-    
+<?php } ?>
+<?php
+$sql = "SELECT * FROM vie_associative ORDER BY  date DESC";
+$pre = $pdo->prepare($sql);
+$pre->execute();
+$article = $pre->fetchAll(PDO::FETCH_ASSOC);
+if (isset($_SESSION['user'])) { 
+    $user = $_SESSION['user'];
+} {?>
     <div class="row col s12 l12">
-        <div class="title col s10 l12 offset-s1 offset-l2">
+        <div id="vie" class="title col s10 l10 offset-s1 offset-l2">
             <h2>Vie Associative</h2>
         </div>
-        <div class="col s10 l2 offset-s1 offset-l2">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraO77B-wORp7xBbqj6MPrpZw60xyWVYP4JQ&usqp=CAU">
-            <p>
-                Soirée crêpes de l'ADE
-            </p>
-        </div>
-        <div class="col s10 l2 offset-s1 offset-0.5">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQ7i4qP6UM8srWdPT80ihdrHEDA1L_fNHyA&usqp=CAU">
-            <p>
-                Katochi nous présente les coulisses
-            </p>
-        </div>
-        <div class="col s10 l2 offset-s1 ">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSNVJnRLB1sVNXvWR1qvx6VgnHZFs57HQdA&usqp=CAU" >
-            <p>
-                Oui. 
-            </p>
+        <div>
+            <div class="col s10 l2 offset-s1 offset-l2 ">
+                <img src="<?php echo $article[1]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[1]['id']?>" ><?php echo $article[1]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[2]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[2]['id']?>" ><?php echo $article[2]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[3]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[3]['id']?>" ><?php echo $article[3]['titre'];?></a>
+            </div>
+            <div class="col s10 l2 offset-s1 offset-l0.5 ">
+            <img src="<?php echo $article[4]['img1']; ?>">
+                <a href="article.php?id=<?php echo $article[4]['id']?>" ><?php echo $article[4]['titre'];?></a>
+            </div>
         </div>
     </div> 
 </div>   
+<?php }?>
 <?php require_once "composant/footer.php";?>

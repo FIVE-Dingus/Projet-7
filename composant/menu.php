@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>Projet 7 : GC News</title>
-    <meta name="description" content="Ce site est un Portfolio de William Gabali et de Dylan Beney, deux GigaChad">
+    <title>GC News</title>
+    <meta name="description" content="GCnews">
     <meta name="google-signin-client_id" content="191504532339-afernn1nkoggl6rcvunsp3roi4dvv57h.apps.googleusercontent.com">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,9 +24,9 @@
   </head>
   <body>
     <header>
-      <nav style="padding-top: 3%;">
+      <nav >
         <div class="nav-wrapper" style="color:#27201F;" >
-            <ul id="nav-mobile" class="hide-on-med-and-down">
+            <ul id="nav-mobile" class="hide-on-med-and-down" style="padding-top: 3%;">
               <div class="row">
                 <div class="col s5 offset-s1">
                   <div class="col s1 l2">
@@ -40,11 +40,11 @@
               
                 <div class="col s4">
                   <ul class="menu">
-                    <li><a class="dropdown-trigger" href="#!">ACTUALITÉS</a></li>
+                    <li><a href="#actu">ACTUALITÉS</a></li>
                       
-                    <li><a class="dropdown-trigger" href="#!">CAMPUS</a></li>
+                    <li><a href="#camp">CAMPUS</a></li>
                       
-                    <li><a class="dropdown-trigger" href="#!">VIE ASSOCIATIVE</a></li> 
+                    <li><a href="#vie">VIE ASSOCIATIVE</a></li> 
                   </ul> 
                 </div> 
                 <div class="col s2">
@@ -63,28 +63,26 @@
             </ul>
           <ul id="slide-out" class="sidenav">
           <div class="row">
-            <div class="col s5">
+            <div class="col s3">
               <a href="index.php"><img style="width: 55px;" src="img/BDE.png.png"></a>
             </div>
-            <div class="col s1 offset-s2">
+            <div class="col s2 offset-s1">
               <li><a href="sass.html"><i class="material-icons">search</i></a></li>
             </div>
-            <div class="col s2">
               <?php 
               if(isset($_SESSION['user'])){
-                echo "<li><a href='admin.php'><i class='material-icons'>account_circle</i></a></li>";
-                echo "<li><a href='action/logout.php'><i class='material-icons'>exit_to_app</i></a></i>";
+                echo "<div class='col s2'><li><a href='admin.php'><i class='material-icons'>account_circle</i></a></li></div>";
+                echo "<div class='col s2'><li><a href='action/logout.php'><i class='material-icons'>exit_to_app</i></a></i></div>";
                 }else{
                   
                 }
                 ?>
-            </div>
           </div>
-            <li><a class="dropdown-trigger" href="#!">ACTUALITÉS</a></li>
-            <li><a class="dropdown-trigger" href="#!">CAMPUS</a></li>
-            <li><a class="dropdown-trigger" href="#!">VIE ASSOCIATIVE</a></li> 
+            <li><a href="#actu">ACTUALITÉS</a></li>
+            <li><a href="#camp">CAMPUS</a></li>
+            <li><a href="#vie">VIE ASSOCIATIVE</a></li> 
           </ul>
           <a href="connexion.php" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          </div>
+        </div>
       </nav>
     </header>
