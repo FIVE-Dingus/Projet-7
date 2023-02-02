@@ -48,7 +48,7 @@
                   </ul> 
                 </div> 
                 <div class="col s2">
-                  <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+                  <!-- <li><a href="sass.html"><i class="material-icons">search</i></a></li> -->
                   
                   <?php 
                   if(isset($_SESSION['user'])){
@@ -67,11 +67,11 @@
               <a href="index.php"><img style="width: 55px;" src="img/BDE.png.png"></a>
             </div>
             <div class="col s2 offset-s1">
-              <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+              <!-- <li><a href="sass.html"><i class="material-icons">search</i></a></li> -->
             </div>
               <?php 
               if(isset($_SESSION['user'])){
-                echo "<div class='col s2'><li><a href='admin.php'><i class='material-icons'>account_circle</i></a></li></div>";
+                echo "<div class='col s2'><li style='width:50px'><a href='admin.php'><i class='material-icons'>account_circle</i></a></li></div>";
                 echo "<div class='col s2'><li><a href='action/logout.php'><i class='material-icons'>exit_to_app</i></a></i></div>";
                 }else{
                   

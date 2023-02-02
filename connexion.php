@@ -35,7 +35,7 @@ if (!empty($_POST['credential'])) {
                 $pre = $pdo->prepare($sql);
                 $pre->execute($dataBinded);
             } else {
-                echo $_SESSION['user']['email'];
+                
             }; //fin de la boucle
         header('location:index.php');
 
