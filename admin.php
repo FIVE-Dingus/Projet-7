@@ -49,12 +49,15 @@ if(!isset($_SESSION['user'])){
                     </div>
                     <div class="row">
                         <div class="col l2 s12 offset-l1">
+                        <i class="material-icons">home</i>
                             <h5>DashBoard</h5>
                         </div>
                         <div class="col l2 s12 offset-l1">
+                        <i class="material-icons">date_range</i>
                             <h5>Actualités</h5>
                         </div>
                         <div class="col l2 s12 offset-l1">
+                        <i class="material-icons">settings</i>
                             <h5>Paramètres</h5>
                         </div>
                     </div>
@@ -65,9 +68,9 @@ if(!isset($_SESSION['user'])){
                                     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Posts</div>
                                     <div class="collapsible-body">
                                         <ul> 
-                                            <li><i class="material-icons">insert_chart</i> Posts Publiés</li>
-                                            <li><i class="material-icons">insert_chart</i> Posts Prévus</li>
-                                            <li><i class="material-icons">insert_chart</i> Favoris</li>
+                                            <li><i class="material-icons">check_circle</i> Posts Publiés</li>
+                                            <li><i class="material-icons">alarm</i> Posts Prévus</li>
+                                            <li><i class="material-icons">bookmark</i> Favoris</li>
                                         </ul>
                                     </div>
                                 </li>
@@ -90,18 +93,18 @@ if(!isset($_SESSION['user'])){
                     </div>
                 </div>    
             </div>
-            <div class="col l3">
+            <div class="col l9">
                 <div class="container grey-background col l12">
                     <h2> Bienvenue</h2>
                     <h3>Ces 30 derniers jours</h3>
                     <div class="row">
-                        <div class="col l2 s12 offset-l1">
+                        <div class="col l3 s12" style="background-color: purple; border-radius: 5%;">
                             <h4>Views</h4>
                         </div>
-                        <div class="col l2 s12 offset-l1">
+                        <div class="col l3 s12 offset-l1" style="background-color: purple; border-radius: 5%;">
                             <h4>Follows</h4>
                         </div>
-                        <div class="col l2 s12 offset-l1">
+                        <div class="col l3 s12 offset-l1" style="background-color: purple; border-radius: 5%;">
                             <h4>Likes</h4>
                         </div>
                     </div>
