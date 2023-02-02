@@ -86,16 +86,13 @@ foreach ($data as $user) {
                     </div>
                 </div>
                 <div class="col s12">
-                    <ul class="collapsible">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Posts</div>
-                            <div class="">
-                                <ul class="deroulant">
-                                    <li><a href="#!"><i class="material-icons">check_circle</i> Posts Publiés </a></li>
-                                    <li><a href="#!"><i class="material-icons">alarm</i> Posts Prévus <span class="badge" style="border: #ACACAC; border-radius: 110px;"><i class="material-icons">add</i>1</span></a></li>
-                                    <li><a href="#!"><i class="material-icons">bookmark</i> Favoris</a></li>
-                                </ul>
-                            </div>
+                    <ul class="post">
+                        <li><i class="material-icons">arrow_drop_down</i>Posts
+                            <ul class="deroulant" style="display: none; background-color: #FBFBFB; width: 100%; z-index: 1000; width: 150px; padding: 0px; margin-left: 40px;">
+                                <li><a href="#!"><i class="material-icons">check_circle</i> Posts Publiés </a></li>
+                                <li><a href="#!"><i class="material-icons">alarm</i> Posts Prévus <span class="badge" style="border: #ACACAC; border-radius: 110px;"><i class="material-icons">add</i>1</span></a></li>
+                                <li><a href="#!"><i class="material-icons">bookmark</i> Favoris</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
