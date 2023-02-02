@@ -13,33 +13,12 @@ nav a:hover {
 }
 
 
-nav>ul li:hover .derou{
+nav>ul li:hover .deroulant{
     display: block !important;
 }
-
 
 .deroulant li {
-    float: none !important;
-    display: block !important;
-    width: 95%;
-    text-align: left !important;
-}
-
-.sous-menu .sous-menu2 li {
-    float: none !important;
-    display: block !important;
-    width: 95% !important;
-    text-align: left !important;
-}
-
-.sous-menu a {
-    padding: 10px !important;
-    border-bottom: none !important;
-}
-
-
-.sous-menu li:hover {
-    background-color: RGBa(200, 200, 200, 0.1) !important;
+    line-height: 1 !important;
 }
 
 .dropdown-content li {
@@ -79,7 +58,7 @@ a {
 
 /* Fin Homepage CSS*/
 
-/* admin */
+/* Admin */
 
 h2.title_admin {
     margin-top: 13px;
@@ -107,10 +86,19 @@ div.menu_admin {
 }
 
 .container_droit div.stats{
-    background : linear-gradient(to right, #4f46ba, #84e8f4);
     border-radius: 5%;
     color: #27201F;
 }
+
+.post a {
+    color: #27201F ;
+}
+
+.post li a:hover {
+    background-color: #27201F !important;
+    color: #FBFBFB !important;
+}
+
 /* Fin admin */
 
 #Formulaire-contact html {

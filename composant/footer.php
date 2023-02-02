@@ -1,6 +1,4 @@
-<html>
 
-<body>
   <footer class="page-footer">
     <div class="footer">
       <div class="row">

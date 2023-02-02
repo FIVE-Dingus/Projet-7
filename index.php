@@ -25,7 +25,7 @@ if (isset($_SESSION['user'])) {
                     <div style="position:absolute;z-index:1">
                         <img src="<?php echo $article[0]['img1']; ?>">
                     </div>
-                    <div style="position:relative;left:50px; top:200px; width:200px; height:50px; z-index:2;font-size:200%; @media(min-width : 600px){.article{width : 24.99999%}}">
+                    <div style="position:relative;left:50px; top: 275px;; width:200px; height:50px; z-index:2;font-size:200%; @media(min-width : 600px){.article{width : 24.99999%}}">
                         <a href="actu.php?id=<?php echo $article[0]['id'] ?>"><?php echo $article[0]['titre']; ?></a>
                     </div>
                 </div>
@@ -37,6 +37,7 @@ if (isset($_SESSION['user'])) {
                 <p>
                     <?php echo $article[0]['P1']; ?>
                 </p>
+                <?php echo $article[0]['jaime'] ?>  <i class="material-icons" style="vertical-align:top">thumb_up</i>
             </div>
 
         </div>
@@ -46,20 +47,25 @@ if (isset($_SESSION['user'])) {
             </div>
             <div>
                 <div class="col s10 l2 offset-s1 offset-l2 ">
-                    <img src="<?php echo $article[1]['img1']; ?>">
-                    <a href="actu.php?id=<?php echo $article[1]['id'] ?>"><?php echo $article[1]['titre']; ?></a>
+                        <img src="<?php echo $article[1]['img1']; ?>">
+                        <a href="actu.php?id=<?php echo $article[1]['id'] ?>"><?php echo $article[1]['titre']; ?></a>
+                        <?php echo $article[1]['jaime'] ?>  <i class="material-icons" style="vertical-align:top">thumb_up</i>
+                    </div>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[2]['img1']; ?>">
                     <a href="actu.php?id=<?php echo $article[2]['id'] ?>"><?php echo $article[2]['titre']; ?></a>
+                    <?php echo $article[2]['jaime'] ?>  <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[3]['img1']; ?>">
                     <a href="actu.php?id=<?php echo $article[3]['id'] ?>"><?php echo $article[3]['titre']; ?></a>
+                    <?php echo $article[3]['jaime'] ?>  <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[4]['img1']; ?>">
                     <a href="actu.php?id=<?php echo $article[4]['id'] ?>"><?php echo $article[4]['titre']; ?></a>
+                    <?php echo $article[4]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
             </div>
         </div>
@@ -80,18 +86,22 @@ if (isset($_SESSION['user'])) {
                 <div class="col s10 l2 offset-s1 offset-l2 ">
                     <img src="<?php echo $article[0]['img1']; ?>">
                     <a href="campus_actu.php?id=<?php echo $article[0]['id'] ?>"><?php echo $article[0]['titre']; ?></a>
+                    <?php echo $article[0]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[1]['img1']; ?>">
                     <a href="campus_actu.php?id=<?php echo $article[1]['id'] ?>"><?php echo $article[1]['titre']; ?></a>
+                    <?php echo $article[1]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[2]['img1']; ?>">
                     <a href="campus_actu.php?id=<?php echo $article[2]['id'] ?>"><?php echo $article[2]['titre']; ?></a>
+                    <?php echo $article[2]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[3]['img1']; ?>">
                     <a href="campus_actu.php?id=<?php echo $article[3]['id'] ?>"><?php echo $article[3]['titre']; ?></a>
+                    <?php echo $article[3]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
             </div>
         </div>
@@ -112,18 +122,22 @@ if (isset($_SESSION['user'])) {
                 <div class="col s10 l2 offset-s1 offset-l2 ">
                     <img src="<?php echo $article[0]['img1']; ?>">
                     <a href="vie_associative.php?id=<?php echo $article[0]['id'] ?>"><?php echo $article[0]['titre']; ?></a>
+                    <?php echo $article[0]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[1]['img1']; ?>">
                     <a href="vie_associative.php?id=<?php echo $article[1]['id'] ?>"><?php echo $article[1]['titre']; ?></a>
+                    <?php echo $article[1]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[2]['img1']; ?>">
                     <a href="vie_associative.php?id=<?php echo $article[2]['id'] ?>"><?php echo $article[2]['titre']; ?></a>
+                    <?php echo $article[2]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
                 <div class="col s10 l2 offset-s1 offset-l0.5 ">
                     <img src="<?php echo $article[3]['img1']; ?>">
                     <a href="vie_associative.php?id=<?php echo $article[3]['id'] ?>"><?php echo $article[3]['titre']; ?></a>
+                    <?php echo $article[3]['jaime'] ?> <i class="material-icons" style="vertical-align:top">thumb_up</i>
                 </div>
             </div>
         </div>
