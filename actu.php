@@ -26,6 +26,12 @@ $article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
         </div>
         <div class="col s10 m5 l2 offset-s1">
             <p id="p1"><?php echo $article[0]['P1'] ?></p>
+            <?php echo $article[0]['jaime']?>
+            <form method="post" action="action/like_derniere_actu.php" enctype="multipart/form-data">
+                <input id="id" type='hidden' name='id' value="<?php echo $article[0]['id']?>">
+                <input id="jaime" type='hidden' name='jaime' value="<?php echo $article[0]['jaime']+1 ?>">
+                <input type='submit' value="like" />
+            </form>
         </div>
     </div>
     <!--premieres image et paragraphe de la page-->

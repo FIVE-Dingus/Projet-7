@@ -100,6 +100,35 @@ a {
 
 /* Fin Homepage CSS*/
 
+/* admin */
+
+.post ul li {
+    color: #ACACAC;
+}
+
+i.material-icons {
+    margin-bottom: 0px;
+}
+
+div.menu_admin {
+    margin-bottom: 55px;
+}
+
+div.menu_admin div h5{
+    margin-top: 0px;
+}
+
+.container_droit div {
+    border-radius: 5%;
+}
+
+.container_droit div.stats{
+    background : linear-gradient(to right, #4f46ba, #84e8f4);
+    border-radius: 5%;
+    color: #27201F;
+}
+/* Fin admin */
+
 #Formulaire-contact html {
     color: #27201F !important;
 }

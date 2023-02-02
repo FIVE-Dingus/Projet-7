@@ -22,11 +22,10 @@ if (!empty($_POST['credential'])) {
     $user = $client->verifyIdToken($id_token);
     if ($user) {
         $_SESSION['user'] = $user;
-        $lol = "SELECT email FROM user WHERE email='" . $_SESSION['user']['email'] . "'";
-        $fun = $pdo->prepare($lol);
-        $fun->execute();
-        $connect = $fun->fetchAll(PDO::FETCH_ASSOC);
-        $count = $fun->rowCount();
+        $sql = "SELECT email FROM user WHERE email='" . $_SESSION['user']['email'] . "'";
+        $pre = $pdo->prepare($sql);
+        $pre->execute();
+        $count = $pre->rowCount();
         if ($count == 0) {
             $sql = "INSERT INTO user(email) VALUES(:email)";
             $dataBinded = array(

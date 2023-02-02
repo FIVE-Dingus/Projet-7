@@ -1,12 +1,12 @@
 <?php 
 require_once "../cfg/config.php";
-$sql = "UPDATE user SET titre=:titre WHERE id=:id";
+$sql = "UPDATE derniere_actu SET jaime=:jaime WHERE id=:id";
 $dataBinded=array(
     ':id'   => $_POST['id'],
-    ':titre'=> $_POST['titre'],
+    ':jaime'=> $_POST['jaime'],
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
 
-header('location:../admin.php')
+header('location:../actu.php?id='.$_POST["id"]);
 ?>

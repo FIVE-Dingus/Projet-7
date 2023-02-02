@@ -1,14 +1,20 @@
-<?php require_once "cfg/config.php";
+<?php
+
+use phpseclib3\Common\Functions\Strings;
+
+use function GuzzleHttp\json_encode;
+
+require_once "cfg/config.php";
 ?>
 <?php
 if (!isset($_SESSION['user'])) {
     header('location:connexion.php');
 };
 $email = $_SESSION['user']['email'];
-$commande = "SELECT admin FROM user WHERE email='" . $email . "'";
-$prepar = $pdo->prepare($commande);
-$prepar->execute();
-$data = $prepar->fetchAll(PDO::FETCH_ASSOC);
+$sql = "SELECT admin FROM user WHERE email='" . $email . "'";
+$pre = $pdo->prepare($sql);
+$pre->execute();
+$data = $pre->fetchAll(PDO::FETCH_ASSOC);
 foreach ($data as $user) {
 
     if ($user['admin'] == 0) {
@@ -47,79 +53,135 @@ foreach ($data as $user) {
     <div class="row">
         <div class="col l3">
             <div class="container white-background col l12">
-                <div class="col l12">
-                    <a href="index.php"><img src="img/LOGO_GC.png" style="align-content:left;"> </a>
-                    <h2>GC News</h2>
+                <div class="col l12" style="margin-bottom: 110px; margin-top: 125px;">
+                    <div class="col l2 offset-l1">
+                        <a href="index.php"><img src="img/LOGO_GC.png" alt="logo gaming campus" style="width: 55px; align-content:left;"></a>
+                    </div>
+                    <div class="col l8">
+                        <h2 style="font-size: 30px; margin-bottom: 0px; margin-top: 13px;">GC News</h2>
+                    </div>
                 </div>
-                <div class="col l11 s12 offset-l1">
-                    <i class="material-icons">home</i><h5>DashBoard</h5>
+                <div class="menu_admin col l11 s12 offset-l1">
+                    <div class="col l1">
+                        <i class="material-icons">home</i>
+                    </div>
+                    <div class="col l8 offset-l1">
+                        <h5>DashBoard</h5>
+                    </div>
                 </div>
-                <div class="col l11 s12 offset-l1">
-                    <i class="material-icons">date_range</i>
-                    <h5>Actualités</h5>
+                <div class="menu_admin col l11 s12 offset-l1">
+                    <div class="col l1">
+                        <i class="material-icons">date_range</i>
+                    </div>
+                    <div class="col l8 offset-l1">
+                        <h5>Actualités</h5>
+                    </div>
                 </div>
-                <div class="col l11 s12 offset-l1">
-                    <i class="material-icons">settings</i>
-                    <h5>Paramètres</h5>
+                <div class="menu_admin col l11 s12 offset-l1">
+                    <div class="col l1">
+                        <i class="material-icons">settings</i>
+                    </div>
+                    <div class="col l8 offset-l1">
+                        <h5>Paramètres</h5>
+                    </div>
                 </div>
                 <div class="col s12">
                     <ul class="collapsible">
                         <li>
                             <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Posts</div>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><i class="material-icons">check_circle</i> Posts Publiés</li>
-                                    <li><i class="material-icons">alarm</i> Posts Prévus</li>
-                                    <li><i class="material-icons">bookmark</i> Favoris</li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col s12">
-                    <ul class="collapsible">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Utilisateurs favoris</div>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>test</li>
+                            <div class="">
+                                <ul class="deroulant">
+                                    <li><a href="#!"><i class="material-icons">check_circle</i> Posts Publiés </a></li>
+                                    <li><a href="#!"><i class="material-icons">alarm</i> Posts Prévus <span class="badge" style="border: #ACACAC; border-radius: 110px;"><i class="material-icons">add</i>1</span></a></li>
+                                    <li><a href="#!"><i class="material-icons">bookmark</i> Favoris</a></li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
+            <div class="col s12">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Utilisateurs</div>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>test</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="col l9">
-            <div class="container grey-background col l12">
-                <h2> Bienvenue</h2>
-                <h3>Ces 30 derniers jours</h3>
-                <div class="row">
-                    <div class="col l3 s12" style="background-color: #4f46ba; border-radius: 5%; color:#9590d6;">
-                        <h4>Views</h4>
+            <div class="container_droit grey-background col l12">
+                <h2 style="margin-top: 13px;"> Bienvenue</h2>
+                <h3 >Ces 30 derniers jours</h3>
+                <div class="stats col l3">
+                    <h4>Views</h4>
+                </div>
+                <div class="stats col l3 s12 offset-l1">
+                    <h4>Articles</h4>
+                    <?php
+                        $sql = "SELECT COUNT(*) AS nb_article FROM derniere_actu ";
+                        $jaime = "SELECT COUNT(*) AS nb_article FROM campus_actus ";
+                        $jaimes = "SELECT COUNT(*) AS nb_article FROM vie_associative ";
+                        $pre = $pdo->prepare($sql);
+                        $jaime = $pdo->prepare($jaime);
+                        $jaimes = $pdo->prepare($jaimes);
+                        $pre->execute();
+                        $jaime->execute();
+                        $jaimes->execute();
+                        $like = $pre->fetch(PDO::FETCH_ASSOC);
+                        $likes = $jaime->fetch(PDO::FETCH_ASSOC);
+                        $vie_like = $jaimes->fetch(PDO::FETCH_ASSOC);
+                        echo $like['nb_article']+$likes['nb_article']+$vie_like['nb_article'];
+                    ?>
+                </div>
+                <div class="stats col l3 s12 offset-l1">
+                    <div class="col l5">
+                        <h4>Likes:</h4>
                     </div>
-                    <div class="col l3 s12 offset-l1" style="background-color: #4f46ba; border-radius: 5%; color:#9590d6;">
-                        <h4>Follows</h4>
-                    </div>
-                    <div class="col l3 s12 offset-l1" style="background-color: #4f46ba; border-radius: 5%; color:#9590d6;">
-                        <h4>Likes</h4>
+                    <div class="col l6 offset-l1">
+                        <h4><?php
+                        $sql = "SELECT SUM(jaime) AS nb_like FROM derniere_actu ";
+                        $jaime = "SELECT SUM(jaime) AS nb_like FROM campus_actus ";
+                        $jaimes = "SELECT SUM(jaime) AS nb_like FROM vie_associative ";
+                        $pre = $pdo->prepare($sql);
+                        $jaime = $pdo->prepare($jaime);
+                        $jaimes = $pdo->prepare($jaimes);
+                        $pre->execute();
+                        $jaime->execute();
+                        $jaimes->execute();
+                        $like = $pre->fetch(PDO::FETCH_ASSOC);
+                        $likes = $jaime->fetch(PDO::FETCH_ASSOC);
+                        $vie_like = $jaimes->fetch(PDO::FETCH_ASSOC);
+                        echo $like['nb_like']+$likes['nb_like']+$vie_like['nb_like'];
+                        ?></h4>
                     </div>
                 </div>
-                <h3>Analyse</h3>
-
-                <h3>Statistiques</h3>
-                <div class="row">
-                    <div class="col l3 s12 " style="border-radius: 5%; color:#9590d6;">
-                        <h4>Objectifs hebdomadaires atteint a </h4>
-                    </div>
-                    <div class="col l3 s12 offset-l1" style="background-color: #4f46ba; border-radius: 5%; color:#9590d6;">
-                        <h4>Objectifs mensuels atteint a</h4>
-                    </div>
+                <h3 style="margin-top: 13px;">Analyse</h3>
+                <div class="col l3 s12 ">
+                    <h4>article</h4>
+                </div>
+                <div class="col l3 s12 offset-l1">
+                    <i class="material-icons" style="justify-content: center;">watch_later</i>
+                    <h4>Posts prévus</h4>
+                </div>
+                <div class="col l3 s12 offset-l1">
+                    <i class="material-icons" style="justify-content: center;">add_circle</i>
+                    <h4>Ajouter un nouveau post</h4>
+                </div>
+                <h3 style="margin-top: 13px;">Statistiques</h3>
+                <div class="col l3 s12 grey-background" style="color:#27201F;">
+                    <h5>Objectifs hebdomadaires atteints à :</h5>
+                </div>
+                <div class="col l3 s12 offset-l1" style="background-color: #4f46ba; color:#FBFBFB;">
+                    <h5>Objectifs mensuels atteints à :</h5>
                 </div>
             </div>
         </div>
     </div>
-
 
     <?php require_once "composant/footer.php"; ?>
 

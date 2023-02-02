@@ -3,3 +3,7 @@ $(document).ready(function () {
     $('.modal').modal();
     $(".dropdown-trigger").dropdown({ hover: false });
 });
+
+$( "#like" ).click(function() {
+    ;
+  });
