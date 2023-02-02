@@ -17,7 +17,7 @@ if (!empty($_POST['credential'])) {
     }
 
     $CLIENT_ID = "191504532339-afernn1nkoggl6rcvunsp3roi4dvv57h.apps.googleusercontent.com";
-    $client = new Google_Client(['client_id' => $CLIENT_ID]);  // Specify the CLIENT_ID of the app that accesses the backend
+    $client = new Google_Client(['client_id' => $CLIENT_ID]); // Specify the CLIENT_ID of the app that accesses the backend
     $id_token = $_POST['credential'];
     $user = $client->verifyIdToken($id_token);
     if ($user) {
@@ -29,12 +29,13 @@ if (!empty($_POST['credential'])) {
         if ($count == 0) {
             $sql = "INSERT INTO user(email) VALUES(:email)";
             $dataBinded = array(
-                ':email'   => $_SESSION['user']['email']
+                ':email' => $_SESSION['user']['email']
             );
             $pre = $pdo->prepare($sql);
             $pre->execute($dataBinded);
         } else {
-        }; //fin de la boucle
+        }
+        ; //fin de la boucle
         header('location:index.php');
 
         exit();

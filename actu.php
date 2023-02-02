@@ -20,28 +20,32 @@ $article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
 </div>
 
 <div class="article row">
-    <div class="col s12 m12 l12">
-        <div class="col s10 m5 l6 offset-s1 offset-m1 offset-l1">
+    <div class="col s12 m12 l10 offset-l2">
+        <div class="col s10 m5 l7 offset-s1 offset-m1">
             <img src="<?php echo $article[0]['img1'] ?>" alt="image 1 de l'article">
         </div>
         <div class="col s10 m5 l2 offset-s1">
-            <p id="p1"><?php echo $article[0]['P1'] ?></p>
-            <?php echo $article[0]['jaime']?>
+            <p id="p1">
+                <?php echo $article[0]['P1'] ?>
+            </p>
+            <?php echo $article[0]['jaime'] ?>
             <form method="post" action="action/like_derniere_actu.php" enctype="multipart/form-data">
-                <input id="id" type='hidden' name='id' value="<?php echo $article[0]['id']?>">
-                <input id="jaime" type='hidden' name='jaime' value="<?php echo $article[0]['jaime']+1 ?>">
-                <input id="submit"   type='submit' value="LIKE">
+                <input id="id" type='hidden' name='id' value="<?php echo $article[0]['id'] ?>">
+                <input id="jaime" type='hidden' name='jaime' value="<?php echo $article[0]['jaime'] + 1 ?>">
+                <input id="submit" type='submit' value="LIKE">
             </form>
         </div>
     </div>
     <!--premieres image et paragraphe de la page-->
 
-    <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1 ">
-        <p><?php echo $article[0]['P2'] ?></p>
+    <div class="col s10 m10 l9 offset-s1 offset-m1 offset-l2 ">
+        <p>
+            <?php echo $article[0]['P2'] ?>
+        </p>
     </div>
     <!--2eme paragraphe de la page-->
 
-    <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+    <div class="col s10 m10 l8 offset-s1 offset-m1 offset-l2">
         <img src="<?php echo $article[0]['img2'] ?>" alt="image 2 de l'article">
     </div>
     <!--2eme image de la page-->
