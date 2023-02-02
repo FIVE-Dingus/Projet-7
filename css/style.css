@@ -1,18 +1,18 @@
 /* nav bar */
-.menu a{
+.menu a {
     color: #27201F !important;
 }
 
-nav a:hover{
+nav a:hover {
     border-bottom: 2px solid #DFC7E1 !important;
-  }
-  
-  .menu li a:hover {
+}
+
+.menu li a:hover {
     background-color: #27201F !important;
     color: #FBFBFB !important;
-  }
-  
-  .sous-menu {
+}
+
+.sous-menu {
     display: none !important;
     background-color: #FBFBFB !important;
     position: absolute !important;
@@ -21,8 +21,9 @@ nav a:hover{
     width: 150px !important;
     padding: 0px !important;
     margin-left: 40px !important;
-  }
-  .sous-menu2 {
+}
+
+.sous-menu2 {
     background-color: #FBFBFB !important;
     position: absolute !important;
     width: 100% !important;
@@ -30,92 +31,93 @@ nav a:hover{
     width: 180px !important;
     padding: 0px !important;
     margin-left: 40px !important;
-  }
-  
-  
-  nav > ul li:hover .sous-menu{
+}
+
+
+nav>ul li:hover .sous-menu {
     display: block !important;
-  }
-  
-  
-  .sous-menu li {
+}
+
+
+.sous-menu li {
     float: none !important;
     display: block !important;
     width: 95%;
     text-align: left !important;
-  }
-  .sous-menu .sous-menu2 li {
+}
+
+.sous-menu .sous-menu2 li {
     float: none !important;
     display: block !important;
     width: 95% !important;
     text-align: left !important;
-  }
-  
-  .sous-menu a {
+}
+
+.sous-menu a {
     padding: 10px !important;
     border-bottom: none !important;
-  }
-  
-  
-  .sous-menu li:hover{
-    background-color: RGBa(200,200,200,0.1) !important;
-  }
-  
+}
+
+
+.sous-menu li:hover {
+    background-color: RGBa(200, 200, 200, 0.1) !important;
+}
+
 .dropdown-content li {
     clear: both;
-    color: rgba(0,0,0,0.87);
+    color: rgba(0, 0, 0, 0.87);
     cursor: pointer;
     min-height: 50px;
     line-height: 1.5rem;
     width: 100%;
     text-align: left;
 }
-/* fin nav bar */ 
+
+/* fin nav bar */
 
 /* Homepage CSS */
-body{
+body {
     background-color: #FBFBFB !important;
 }
 
-.mainpage.title{
+.mainpage.title {
     color: #27201F !important;
 }
 
-.maintitle.container{
+.maintitle.container {
     background-color: #fbfbfb !important;
 }
 
-.nav-wrapper{
-    color:#27201F !important;
-    background-color:#fbfbfb !important;
+.nav-wrapper {
+    color: #27201F !important;
+    background-color: #fbfbfb !important;
 }
 
-a{
-    text-decoration: none!important;
-    color: #27201F!important;
+a {
+    text-decoration: none !important;
+    color: #27201F !important;
 }
+
 /* Fin Homepage CSS*/
 
-#Formulaire-contact
-
-html{
+#Formulaire-contact html {
     color: #27201F !important;
 }
 
 
-.text-contact{
+.text-contact {
     margin-left: 100px;
     color: #eaeaea;
-    font-family:'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', cursive;
     font-size: 30px;
 }
 
-.contact-b1{
+.contact-b1 {
     display: flex;
     margin-left: 100px;
 }
 
-input{
+input {
     background-color: #eaeaea;
     padding: 12px;
     border: 5px solid #eaeaea;
@@ -124,7 +126,7 @@ input{
     margin-right: 10px;
 }
 
-textarea{
+textarea {
     background-color: #eaeaea;
     margin-left: 100px;
     border: 2px solid #eaeaea;
@@ -132,11 +134,11 @@ textarea{
     padding: 12px;
 }
 
-img{
+img {
     width: 100%;
 }
 
-.copiright h3{
+.copiright h3 {
     color: #bbb8b8;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -145,13 +147,13 @@ img{
 
 /* page article */
 
-.article .title{
+.article .title {
     color: #27201F;
     font-weight: bold;
 }
 
 
-/* fin page article */ 
+/* fin page article */
 
 /* page connexion */
 
@@ -159,32 +161,32 @@ img{
 /* fin */
 
 /* footer */
-footer{
+footer {
     background-image: url(img/footer.png);
     padding-top: 10px;
-    padding-bottom: 10px;   
+    padding-bottom: 10px;
 }
 
-footer .footer{
+footer .footer {
     display: flex;
     justify-content: space-between;
 }
 
-.redirection{
+.redirection {
     margin-right: 250px;
 }
 
-.bouton-footer{
+.bouton-footer {
     margin-left: 100px;
     margin-top: 10px;
 }
 
-.bouton-footer input{
+.bouton-footer input {
     background-color: #2b325a;
     border: 5px solid #2b325a;
 }
 
-.bouton-footer input:hover{
+.bouton-footer input:hover {
     color: white;
 }
 

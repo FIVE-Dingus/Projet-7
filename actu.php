@@ -1,9 +1,9 @@
-<?php require_once "composant/menu.php"; 
- if(!isset($_SESSION['user'])){
-  header('location:connexion.php');
- }?>
+<?php require_once "composant/menu.php";
+if (!isset($_SESSION['user'])) {
+    header('location:connexion.php');
+} ?>
 <?php
-$sql = "SELECT * FROM derniere_actu WHERE id=".$_GET['id'];
+$sql = "SELECT * FROM derniere_actu WHERE id=" . $_GET['id'];
 $pre = $pdo->prepare($sql);
 $pre->execute();
 $article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
@@ -13,8 +13,8 @@ $article = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
     <div class="title col s11 m10 l8 offset-s1 offset-m2 offset-l2">
         <h2>
             <b> <!--titre de la page-->
-            <?php echo $article[0]['titre'] ?>
-</b>
+                <?php echo $article[0]['titre'] ?>
+            </b>
         </h2>
     </div>
 </div>

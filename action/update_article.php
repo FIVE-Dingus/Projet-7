@@ -9,4 +9,3 @@ $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
 
 header('location:../admin.php')
-?>

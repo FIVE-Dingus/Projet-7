@@ -27,16 +27,15 @@ if (!empty($_POST['credential'])) {
         $fun->execute();
         $connect = $fun->fetchAll(PDO::FETCH_ASSOC);
         $count = $fun->rowCount();
-            if ($count == 0) {
-                $sql = "INSERT INTO user(email) VALUES(:email)";
-                $dataBinded = array(
-                    ':email'   => $_SESSION['user']['email']
-                );
-                $pre = $pdo->prepare($sql);
-                $pre->execute($dataBinded);
-            } else {
-                
-            }; //fin de la boucle
+        if ($count == 0) {
+            $sql = "INSERT INTO user(email) VALUES(:email)";
+            $dataBinded = array(
+                ':email'   => $_SESSION['user']['email']
+            );
+            $pre = $pdo->prepare($sql);
+            $pre->execute($dataBinded);
+        } else {
+        }; //fin de la boucle
         header('location:index.php');
 
         exit();
