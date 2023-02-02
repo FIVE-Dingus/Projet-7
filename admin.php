@@ -164,7 +164,7 @@ foreach ($data as $user) {
 
     <div id="actu" class="modal">
         <div class="modal-content">
-            <h4>Actu</h4>
+            <h4>Actualités</h4>
             <form method="post" action="action/add_arcticle_actu.php" enctype="multipart/form-data">
                 <label for="#titre">Titre</label>
                 <input id="titre" type='title' name='titre'>
