@@ -20,7 +20,7 @@ if (isset($_SESSION['user'])) {
 
         <div class="col s12 l12">
 
-            <div class="col s7 m6 l6 offset-s2 offset-m1 offset-l2">
+            <div class="col s10 m6 l6 offset-s1 offset-m1 offset-l2">
                 <div style="position:relative; height:150px">
                     <div style="position:absolute;z-index:1">
                         <img src="<?php echo $article[0]['img1']; ?>">

@@ -5,7 +5,6 @@ require_once "cfg/config.php";
 if (!isset($_SESSION['user'])) {
     header('location:connexion.php');
 }
-;
 $email = $_SESSION['user']['email'];
 $sql = "SELECT admin FROM user WHERE email='" . $email . "'";
 $pre = $pdo->prepare($sql);
@@ -17,7 +16,6 @@ foreach ($data as $user) {
         header('location:index.php');
     }
 }
-;
 ?>
 
 <!DOCTYPE html>
@@ -78,18 +76,11 @@ foreach ($data as $user) {
                         <i class="material-icons">settings</i>
                     </div>
                     <div class="col l8 offset-l1">
-                        <h5>Paramètres</h5>
-                    </div>
-                </div>
-                <div class="menu_admin col l11 s12 offset-l1">
-                    <div class="col l1">
-                        <i class="material-icons">settings</i>
-                    </div>
-                    <div class="col l8 offset-l1">
                     <form method="post" action="action/add_admin.php" enctype="multipart/form-data">
                         <label for="#email">Saisissez l'email de la personne correspondante</label>
                         <input id="email" type='email' name='email'>
                         <input type="submit" value="ajoutez un admin">
+                    </form>
                     </div>
                 </div>
                 <div class="menu_admin col l11 s12 offset-l1">
@@ -101,6 +92,7 @@ foreach ($data as $user) {
                         <label for="#email">Saisissez l'email de l'admin que vous souhaitez supprimer</label>
                         <input id="email" type='email' name='email'>
                         <input type="submit" value="supprimer un admin">
+                    </form>
                     </div>
                 </div>
             </div>
@@ -109,12 +101,12 @@ foreach ($data as $user) {
             <div class="container_droit grey-background col l12" style="margin-bottom: 50px;">
                 <h2 class="title_admin">Bienvenue</h2>
                 <h3>Ces 30 derniers jours</h3>
-                <div class="stats col l3 s11 offset-s1"
-                    style="background : linear-gradient(to right, #4f46ba, #84e8f4);">
+                <div class="stats col l3 s10 offset-s1"
+                    style="background : linear-gradient(to right, #4f46ba, #84e8f4);margin-top:2%;">
                     <h4>Views:</h4>
                 </div>
-                <div class="stats col l3 s11 offset-l1 offset-s1"
-                    style="background : linear-gradient(to right, #4f46ba, #84e8f4);">
+                <div class="stats col l3 s10 offset-l1 offset-s1"
+                    style="background : linear-gradient(to right, #4f46ba, #84e8f4);margin-top:2%;">
                     <div class="col l5">
                         <h4>Articles:</h4>
                     </div>
@@ -138,8 +130,8 @@ foreach ($data as $user) {
                         </h4>
                     </div>
                 </div>
-                <div class="stats col l3 s11 offset-l1 offset-s1"
-                    style="background : linear-gradient(to right, #4f46ba, #84e8f4);">
+                <div class="stats col l3 s10 offset-l1 offset-s1"
+                    style="background : linear-gradient(to right, #4f46ba, #84e8f4);margin-top:2%;">
                     <div class="col l5">
                         <h4>Likes:</h4>
                     </div>
@@ -164,7 +156,7 @@ foreach ($data as $user) {
                     </div>
                 </div>
             </div>
-            <div class="col s6">
+            <div class="col s12 l6">
                 <ul class="collapsible post">
                     <li>
                         <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Posts</div>
@@ -179,7 +171,7 @@ foreach ($data as $user) {
                     </li>
                 </ul>
             </div>
-            <div class="col s6">
+            <div class="col s12 l6">
                 <ul class="collapsible users">
                     <li>
                         <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>ajouter post

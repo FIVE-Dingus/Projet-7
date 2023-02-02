@@ -7,7 +7,5 @@ $dataBinded=array(
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
 
-echo $_POST['email'];
-
-//header('location:../admin.php')
+header('location:../admin.php')
 ?>
